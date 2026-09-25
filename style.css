@@ -1,0 +1,696 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f7f8f6;
+    color: #222;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    min-height: 75px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 22px;
+
+    padding: 10px 5%;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    min-width: 175px;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf7df;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #2e7d32;
+}
+
+.tagline {
+    font-size: 9px;
+    color: #777;
+}
+
+
+/* =========================
+   LOCATION
+========================= */
+
+.location-btn {
+    border: none;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px;
+}
+
+.location-icon {
+    font-size: 21px;
+}
+
+.location-text {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+.small-text {
+    font-size: 10px;
+    color: #777;
+}
+
+.location-text span:last-child {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.arrow {
+    font-size: 17px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-container {
+    position: relative;
+
+    flex: 1;
+
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+
+    background: #f1f3f0;
+
+    border-radius: 8px;
+
+    border: 1px solid transparent;
+
+    transition: 0.2s;
+}
+
+.search-container:focus-within {
+    border-color: #4caf50;
+    background: white;
+}
+
+.search-icon {
+    margin-left: 15px;
+}
+
+.search-container input {
+    flex: 1;
+
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    padding: 0 12px;
+
+    font-size: 13px;
+}
+
+.search-btn {
+    height: 100%;
+
+    padding: 0 20px;
+
+    border: none;
+
+    background: #2e7d32;
+
+    color: white;
+
+    border-radius: 0 8px 8px 0;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.search-btn:hover {
+    background: #1b5e20;
+}
+
+
+/* =========================
+   SEARCH SUGGESTIONS
+========================= */
+
+.search-suggestions {
+    position: absolute;
+
+    top: 50px;
+
+    left: 0;
+
+    width: 100%;
+
+    background: white;
+
+    border-radius: 8px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+
+    display: none;
+
+    overflow: hidden;
+}
+
+.search-suggestions.active {
+    display: block;
+}
+
+.suggestion {
+    padding: 12px 15px;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    background: #f1f8e9;
+}
+
+
+/* =========================
+   ACCOUNT
+========================= */
+
+.account-wrapper {
+    position: relative;
+}
+
+.account-btn {
+    border: none;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.account-icon {
+    font-size: 22px;
+}
+
+.account-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   ACCOUNT DROPDOWN
+========================= */
+
+.account-dropdown {
+    position: absolute;
+
+    top: 55px;
+    right: 0;
+
+    width: 230px;
+
+    background: white;
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+
+    display: none;
+}
+
+.account-dropdown.active {
+    display: block;
+}
+
+.account-dropdown h4 {
+    margin-bottom: 12px;
+}
+
+.login-btn {
+    width: 100%;
+
+    padding: 9px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #2e7d32;
+
+    color: white;
+
+    font-weight: 600;
+}
+
+.account-dropdown hr {
+    border: none;
+
+    border-top: 1px solid #eee;
+
+    margin: 15px 0;
+}
+
+.account-dropdown a {
+    display: block;
+
+    padding: 8px 0;
+
+    font-size: 13px;
+}
+
+.account-dropdown a:hover {
+    color: #2e7d32;
+}
+
+
+/* =========================
+   CART
+========================= */
+
+.cart-btn {
+    position: relative;
+
+    border: none;
+
+    background: transparent;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-weight: 600;
+}
+
+.cart-icon {
+    font-size: 23px;
+}
+
+.cart-count {
+    position: absolute;
+
+    top: -10px;
+    right: -10px;
+
+    width: 18px;
+    height: 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #ff5722;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   CATEGORY NAV
+========================= */
+
+.category-nav {
+    border-top: 1px solid #eee;
+}
+
+.category-container {
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+    padding: 10px 5%;
+
+    overflow-x: auto;
+}
+
+.category-container a,
+.category-btn {
+    white-space: nowrap;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+.category-btn {
+    border: none;
+
+    background: #eaf7df;
+
+    color: #2e7d32;
+
+    padding: 8px 15px;
+
+    border-radius: 6px;
+}
+
+.category-container a:hover {
+    color: #2e7d32;
+}
+
+.offers {
+    color: #ff5722;
+    font-weight: 700 !important;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+.hero h1 {
+    font-size: 45px;
+
+    max-width: 700px;
+}
+
+.hero h1 span {
+    color: #2e7d32;
+}
+
+.hero p {
+    margin-top: 15px;
+
+    color: #666;
+}
+
+.shop-btn {
+    margin-top: 25px;
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #2e7d32;
+
+    color: white;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   LOCATION MODAL
+========================= */
+
+.location-modal {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2000;
+}
+
+.location-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+
+    width: 90%;
+
+    max-width: 420px;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    color: #666;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+.modal-content input {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 6px;
+
+    outline: none;
+}
+
+.save-location-btn {
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 11px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #2e7d32;
+
+    color: white;
+
+    font-weight: 600;
+}
+
+.close-btn {
+    position: absolute;
+
+    right: 15px;
+    top: 10px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 25px;
+}
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu-btn {
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 25px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .location-btn {
+        display: none;
+    }
+
+    .account-text {
+        display: none;
+    }
+
+    .account-btn .arrow {
+        display: none;
+    }
+
+    .logo {
+        min-width: auto;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+        padding: 10px 4%;
+    }
+
+    .logo {
+        flex: 1;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .search-container {
+        order: 5;
+
+        flex-basis: 100%;
+
+        width: 100%;
+    }
+
+    .category-nav {
+        display: none;
+    }
+
+    .category-nav.mobile-active {
+        display: block;
+    }
+
+    .category-container {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .cart-btn span:not(.cart-icon):not(.cart-count) {
+        display: none;
+    }
+
+}
