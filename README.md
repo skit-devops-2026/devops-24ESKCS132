@@ -6,12 +6,14 @@
 ## Author
 
 | Roll No. | Name | GitHub username |
-|---|---|---|
+|24ESKCS132|Gautam Khatri|Gautambiro|
 | <roll> | <name> | <username> |
 
 ## About
 
-<Two or three sentences on what this application does.>
+<**Krishi Mitra** is a digital platform designed to connect farmers directly with customers, eliminating unnecessary middlemen and helping farmers get better value for their produce.
+It promotes transparent, direct selling while giving customers access to fresh and locally sourced agricultural products.
+>
 
 ## Tech stack
 
