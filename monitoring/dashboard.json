@@ -1,0 +1,11 @@
+{
+  "title": "App Overview",
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Requests per second",
+      "targets": [{ "expr": "rate(http_requests_total[1m])" }]
+    }
+  ],
+  "schemaVersion": 39
+}
