@@ -54,7 +54,7 @@ make run
 
 ## Live URL
 
-Add the live project URL here once the M5 milestone is completed.
+https://devops-24eskcs132.onrender.com
 
 ## Health Endpoint
 
